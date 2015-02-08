@@ -1,18 +1,14 @@
 {
-  "name": "generator-react-gulp-browserify",
-  "version": "0.0.12",
-  "description": "A Yeoman Generator for facebook's React framework. It includes gulp, browserify, livereload and famous official Twitter bootstrap Sass version.",
+  "name": "generator-react-6",
+  "version": "0.0.1",
+  "description": "A Yeoman Generator for facebook's React framework. It includes gulp, browserify, livereload and 6to5 to transpile es6 codes to es5.",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/randylien/generator-react-gulp-browserify.git"
-  },
-  "bugs": "https://github.com/randylien/generator-react-gulp-browserify/issues",
+  "repository": "darklight721/generator-react-6",
   "author": {
-    "name": "Randy Lien",
-    "email": "randylien+github@gmail.com",
-    "url": "https://github.com/randylien"
+    "name": "Roy Evan Sia",
+    "email": "roy.evan.sia@gmail.com",
+    "url": "https://github.com/darklight721"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -27,11 +23,13 @@
     "yeoman-generator",
     "react",
     "browserify",
-    "gulp"
+    "gulp",
+    "6to5"
   ],
   "dependencies": {
-    "yeoman-generator": "~0.16.0",
-    "chalk": "~0.4.0"
+    "yeoman-generator": "^0.18.0",
+    "chalk": "^0.5.0",
+    "yosay": "^0.3.0"
   },
   "devDependencies": {
     "mocha": "*"
