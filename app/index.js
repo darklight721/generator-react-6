@@ -27,10 +27,6 @@ var React6Generator = yeoman.generators.Base.extend({
       name: 'features',
       message: 'What more would you like?',
       choices: [{
-        name: 'Sass with Compass',
-        value: 'includeSass',
-        checked: true
-      }, {
         name: 'Bootstrap',
         value: 'includeBootstrap',
         checked: true
@@ -52,7 +48,6 @@ var React6Generator = yeoman.generators.Base.extend({
 
       function hasFeature(feat) { return features.indexOf(feat) !== -1; }
 
-      this.includeSass = hasFeature('includeSass');
       this.includeBootstrap = hasFeature('includeBootstrap');
       this.includeModernizr = hasFeature('includeModernizr');
       this.includeJest = hasFeature('includeJest');
@@ -80,7 +75,7 @@ var React6Generator = yeoman.generators.Base.extend({
     this.fs.copy(this.templatePath(from), this.destinationPath(to));
   },
 
-  _copyTpl: function() {
+  _copyTpl: function(from, to) {
     this.fs.copyTpl(this.templatePath(from), this.destinationPath(to), this);
   },
 
