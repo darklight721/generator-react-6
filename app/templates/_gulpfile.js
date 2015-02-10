@@ -7,9 +7,6 @@ var del        = require('del'),
 var browserify = require('browserify'),
 var watchify   = require('watchify'),
 var source     = require('vinyl-source-stream');
-<% if (includeJest) { %>
-var path       = require('path');
-<% } %>
 
 var bundler = {
   w: null,
@@ -95,11 +92,10 @@ gulp.task('serve', function() {
 
 <% if (includeJest) { %>
 gulp.task('jest', function () {
-  var nodeModules = path.resolve('./node_modules');
   return gulp.src('app/scripts/**/__tests__')
     .pipe($.jest({
-      scriptPreprocessor: nodeModules + '/gulp-jest/preprocessor.js',
-      unmockedModulePathPatterns: [nodeModules + '/react']
+      scriptPreprocessor: './node_modules/gulp-jest/preprocessor.js',
+      unmockedModulePathPatterns: ['./node_modules/react']
     }));
 });
 <% } %>
