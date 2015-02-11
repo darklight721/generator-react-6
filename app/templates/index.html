@@ -10,35 +10,21 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="styles/main.css">
-    <% if (includeModernizr) { %>
-    <!-- build:js scripts/vendor/modernizr.js -->
+    <% if (includeModernizr) { %><!-- build:js scripts/vendor/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
-    <!-- endbuild -->
-    <% } %>
+    <!-- endbuild --><% } %>
   </head>
   <body>
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-        <li>React</li>
-        <li>Sass with Compass</li>
-        <% if (includeBootstrap) { %><li>Bootstrap</li><% } %>
-        <% if (includeModernizr) { %><li>Modernizr</li><% } %>
-      </ul>
-    </div>
     <div id="app"></div>
 
     <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <% if (includeBootstrap) { %>
+    <!-- bower:js --><% if (includeBootstrap) { %>
     <script src="bower_components/jquery/dist/jquery.js"></script>
-    <% } %>
-    <!-- endbower -->
+    <% } %><!-- endbower -->
     <!-- endbuild -->
     <script src="scripts/app.js"></script>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

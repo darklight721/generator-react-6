@@ -1,41 +1,33 @@
 var React = window.React = require('react'),
-    mountNode = document.getElementById("app");
+    mountNode = document.getElementById('app');
 
-var TodoList = React.createClass({
-  render: function() {
-    var createItem = function(itemText) {
-      return <li>{itemText}</li>;
+var App = React.createClass({
+  getInitialState() {
+    return {
+      items: [
+        'Browserify',
+        '6to5'<% if (includeBootstrap) { %>,
+        'Bootstrap'<% } if (includeModernizr) { %>,
+        'Modernizr'<% } if (includeJest) { %>,
+        'Jest'<% } %>
+      ]
     };
-    return <ul>{this.props.items.map(createItem)}</ul>;
-  }
-});
+  },
 
-var TodoApp = React.createClass({
-  getInitialState: function() {
-    return {items: [], text: ''};
+  renderItem(item) {
+    return <li>item</li>;
   },
-  onChange: function(e) {
-    this.setState({text: e.target.value});
-  },
-  handleSubmit: function(e) {
-    e.preventDefault();
-    var nextItems = this.state.items.concat([this.state.text]);
-    var nextText = '';
-    this.setState({items: nextItems, text: nextText});
-  },
-  render: function() {
+
+  render() {
     return (
-      <div>
-        <h3>TODO</h3>
-        <TodoList items={this.state.items} />
-        <form onSubmit={this.handleSubmit}>
-          <input onChange={this.onChange} value={this.state.text} />
-          <button>{'Add #' + (this.state.items.length + 1)}</button>
-        </form>
-        <Timer />
+      <div className="hero-unit">
+        <h1>'Allo, 'Allo!</h1>
+        <p>This is a React component.<br/>
+           You now also have:</p>
+        <ul>{this.state.items.map(this.renderItem)}</ul>
       </div>
     );
   }
 });
 
-React.renderComponent(<TodoApp />, mountNode);
+React.render(<App/>, mountNode);

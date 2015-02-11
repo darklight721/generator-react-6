@@ -19,7 +19,7 @@ var React6Generator = yeoman.generators.Base.extend({
     var prompts = [{
       type: 'input',
       name: 'project',
-      message: 'What is this project\'s name?',
+      message: 'What is the project\'s name?',
       default: this.appname
     },
     {
@@ -68,7 +68,7 @@ var React6Generator = yeoman.generators.Base.extend({
     this._copy('robots.txt', 'app/robots.txt');
 
     this._copyTpl('main.scss', 'app/styles/main.scss');
-    this._copy('app.js', 'app/scripts/app.js');
+    this._copyTpl('app.js', 'app/scripts/app.js');
   },
 
   _copy: function(from, to) {

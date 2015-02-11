@@ -89,7 +89,6 @@ gulp.task('serve', function() {
       port: 9000
     }));
 });
-
 <% if (includeJest) { %>
 gulp.task('jest', function () {
   return gulp.src('app/scripts/**/__tests__')
@@ -99,7 +98,6 @@ gulp.task('jest', function () {
     }));
 });
 <% } %>
-
 gulp.task('set-production', function() {
   process.env.NODE_ENV = 'production';
 });
@@ -131,9 +129,9 @@ gulp.task('build', ['clean-bundle'], bundler.stop.bind(bundler));
 gulp.task('build:production', sync(['set-production', 'build', 'minify']));
 
 gulp.task('serve:production', ['build:production', serve]);
-
+<% if (includeJest) { %>
 gulp.task('test', ['jest']);
-
+<% } %>
 gulp.task('default', ['build']);
 
 gulp.task('watch', ['clean-bundle', 'serve'], function() {
