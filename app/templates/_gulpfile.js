@@ -1,11 +1,11 @@
 'use strict';
 
-var gulp       = require('gulp'),
-var $          = require('gulp-load-plugins')(),
-var sync       = $.sync(gulp).sync,
-var del        = require('del'),
-var browserify = require('browserify'),
-var watchify   = require('watchify'),
+var gulp       = require('gulp');
+var $          = require('gulp-load-plugins')();
+var sync       = $.sync(gulp).sync;
+var del        = require('del');
+var browserify = require('browserify');
+var watchify   = require('watchify');
 var source     = require('vinyl-source-stream');
 
 var bundler = {
