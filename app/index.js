@@ -69,6 +69,9 @@ var React6Generator = yeoman.generators.Base.extend({
 
     this._copyTpl('main.scss', 'app/styles/main.scss');
     this._copyTpl('app.js', 'app/scripts/app.js');
+
+    if (this.includeJest)
+      this._copy('app-test.js', 'app/scripts/__tests__');
   },
 
   _copy: function(from, to) {
