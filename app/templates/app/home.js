@@ -1,7 +1,6 @@
-var React = window.React = require('react'),
-    mountNode = document.getElementById('app');
+var React = require('react');
 
-var App = React.createClass({
+var Home = React.createClass({
   getInitialState() {
     return {
       items: [
@@ -14,10 +13,6 @@ var App = React.createClass({
     };
   },
 
-  renderItem(item) {
-    return <li>item</li>;
-  },
-
   render() {
     return (
       <div className="hero-unit">
@@ -27,7 +22,11 @@ var App = React.createClass({
         <ul>{this.state.items.map(this.renderItem)}</ul>
       </div>
     );
+  },
+
+  renderItem(item, index) {
+    return <li key={index}>{item}</li>;
   }
 });
 
-React.render(<App/>, mountNode);
+module.exports = Home;

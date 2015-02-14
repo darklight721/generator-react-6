@@ -63,15 +63,16 @@ var React6Generator = yeoman.generators.Base.extend({
     this._copy('bowerrc', '.bowerrc');
     this._copy('gitignore', '.gitignore');
 
-    this._copyTpl('index.html', 'app/index.html');
-    this._copy('favicon.ico', 'app/favicon.ico');
-    this._copy('robots.txt', 'app/robots.txt');
+    this._copyTpl('app/index.html', 'app/index.html');
+    this._copy('app/favicon.ico', 'app/favicon.ico');
+    this._copy('app/robots.txt', 'app/robots.txt');
 
-    this._copyTpl('main.scss', 'app/styles/main.scss');
-    this._copyTpl('app.js', 'app/scripts/app.js');
+    this._copyTpl('app/main.scss', 'app/styles/main.scss');
+    this._copy('app/app.js', 'app/scripts/app.js');
+    this._copyTpl('app/home.js', 'app/scripts/views/home.js');
 
     if (this.includeJest)
-      this._copy('app-test.js', 'app/scripts/__tests__/app-test.js');
+      this._copy('app/home-test.js', 'app/scripts/views/__tests__/home-test.js');
   },
 
   _copy: function(from, to) {

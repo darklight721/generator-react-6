@@ -1,4 +1,4 @@
-<% if (includeBootstrap) { %>$icon-font-path: "/bower_components/bootstrap-sass-official/assets/fonts/";
+<% if (includeBootstrap) { %>$icon-font-path: "/fonts/bootstrap/";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap";
 <% } %>
 body {
@@ -8,8 +8,8 @@ body {
 }
 
 .hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
+  margin: 50px auto;
+  width: 400px;
   font-size: 18px;
   font-weight: 200;
   line-height: 30px;

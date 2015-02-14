@@ -6,7 +6,10 @@ var sync       = $.sync(gulp).sync;
 var del        = require('del');
 var browserify = require('browserify');
 var watchify   = require('watchify');
-var source     = require('vinyl-source-stream');
+var source     = require('vinyl-source-stream');<% if (includeJest) { %>
+var path       = require('path');
+
+require('harmonize')();<% } %>
 
 var bundler = {
   w: null,
@@ -30,7 +33,7 @@ var bundler = {
   stop: function() {
     this.w && this.w.close();
   }
-}
+};
 
 gulp.task('styles', function() {
   return gulp.src('app/styles/main.scss')
@@ -51,9 +54,10 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('html', function() {
+  var assets = $.useref.assets();
   return gulp.src('app/*.html')
-    .pipe($.useref.assets())
-    .pipe($.useref.restore())
+    .pipe(assets)
+    .pipe(assets.restore())
     .pipe($.useref())
     .pipe(gulp.dest('dist'))
     .pipe($.size());
@@ -71,7 +75,7 @@ gulp.task('images', function() {
 });
 
 gulp.task('fonts', function() {
-  return gulp.src('app/fonts/**/*')
+  return gulp.src(['app/fonts/**/*'<% if (includeBootstrap) { %>, 'app/bower_components/bootstrap-sass-official/assets/fonts/**/*'<% } %>])
     .pipe(gulp.dest('dist/fonts'))
     .pipe($.size());
 });
@@ -83,7 +87,7 @@ gulp.task('extras', function () {
 });
 
 gulp.task('serve', function() {
-  gulp.src('dist')
+  gulp.src('./dist')
     .pipe($.webserver({
       livereload: true,
       port: 9000
@@ -91,10 +95,11 @@ gulp.task('serve', function() {
 });
 <% if (includeJest) { %>
 gulp.task('jest', function () {
+  var nodeModules = path.resolve('./node_modules');
   return gulp.src('app/scripts/**/__tests__')
     .pipe($.jest({
-      scriptPreprocessor: './node_modules/gulp-jest/preprocessor.js',
-      unmockedModulePathPatterns: ['./node_modules/react']
+      scriptPreprocessor: nodeModules + '/6to5-jest',
+      unmockedModulePathPatterns: [nodeModules + '/react']
     }));
 });
 <% } %>
@@ -128,7 +133,7 @@ gulp.task('build', ['clean-bundle'], bundler.stop.bind(bundler));
 
 gulp.task('build:production', sync(['set-production', 'build', 'minify']));
 
-gulp.task('serve:production', ['build:production', serve]);
+gulp.task('serve:production', ['build:production', 'serve']);
 <% if (includeJest) { %>
 gulp.task('test', ['jest']);
 <% } %>
