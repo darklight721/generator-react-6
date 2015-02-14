@@ -1,50 +1,41 @@
-# generator-react-gulp-browserify [![Build Status](https://secure.travis-ci.org/randylien/generator-react-gulp-browserify.png?branch=master)](https://travis-ci.org/randylien/generator-react-gulp-browserify)
+# generator-react-6 [![Build Status](https://secure.travis-ci.org/darklight721/generator-react-6.png?branch=master)](https://travis-ci.org/darklight721/generator-react-6)
 
-> [Yeoman](http://yeoman.io) generator for facebook's React framework - Integrate with gulp and browserify.
-
-## What's new?
-
-* Added watchify support
-* We use browserify extension instead of gulp extension
-* Autorun `bower install` & `npm install` by default
-
+> [Yeoman](http://yeoman.io) generator for facebook's React framework with es6 support.
 
 ## What's inside?
 
 Bundled:
 
+* React
 * Gulp
-* Bower
-* jQuery
 * Browserify
-* Reactify - Help to transform JSX
-* watchify support!
-* livereload
+* 6to5
+* Bower
+* Watchify support!
+* Sass
 
 Optional:
 
-* Sass with Compass
 * Bootstrap - Twitter Bootstrap's official Sass version
 * Modernizr
-* Jade for HTML templates
-* CoffeeScript for JavaScript
 * Jest for unit tests
 
 ## Getting Started
 
 ```
-$ npm install -g yo                                # Install Yeoman (if you don't have it yet)...
-$ npm install -g generator-react-gulp-browserify   # ...then install this generator...
-$ yo react-gulp-browserify                         # ...and run it.
+$ npm install -g yo                          # Install Yeoman (if you don't have it yet)...
+$ npm install -g generator-react-6           # ...then install this generator...
+$ yo react-6                                 # ...and run it.
 ```
 
-If you chosen to use sass, you'll need to install it with `gem install sass`.
-If you find your css build results are empty, update your sass gem.
-
-Now, when everything is ready, run watch task and begin to develop your React components.
+Be sure to have ruby and sass gem installed with `gem install sass`.  
+Now, when everything is ready, you can run these gulp tasks to help you develop your React components.
 
 ```
-$ gulp watch
+$ gulp watch                                 # to watch for changes and auto reloads the browser
+$ gulp test                                  # to unit test your code if jest is included
+$ gulp build:production                      # to build your app into minified files ready for production
+$ gulp serve:production                      # to preview the built files
 ```
 
 ## License
