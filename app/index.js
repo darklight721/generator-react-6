@@ -42,7 +42,7 @@ var React6Generator = yeoman.generators.Base.extend({
     }];
 
     this.prompt(prompts, function (answers) {
-      var features = answers.features;
+      var features = answers.features || [];
 
       this.projectName = answers.project;
 
@@ -62,6 +62,7 @@ var React6Generator = yeoman.generators.Base.extend({
     this._copyTpl('_bower.json', 'bower.json');
     this._copy('bowerrc', '.bowerrc');
     this._copy('gitignore', '.gitignore');
+    this._copy('editorconfig', '.editorconfig');
 
     this._copyTpl('app/index.html', 'app/index.html');
     this._copy('app/favicon.ico', 'app/favicon.ico');
