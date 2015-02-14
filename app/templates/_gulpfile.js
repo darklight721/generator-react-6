@@ -87,7 +87,7 @@ gulp.task('extras', function () {
 });
 
 gulp.task('serve', function() {
-  gulp.src('./dist')
+  gulp.src('dist')
     .pipe($.webserver({
       livereload: true,
       port: 9000
@@ -133,13 +133,13 @@ gulp.task('build', ['clean-bundle'], bundler.stop.bind(bundler));
 
 gulp.task('build:production', sync(['set-production', 'build', 'minify']));
 
-gulp.task('serve:production', ['build:production', 'serve']);
+gulp.task('serve:production', sync(['build:production', 'serve']));
 <% if (includeJest) { %>
 gulp.task('test', ['jest']);
 <% } %>
 gulp.task('default', ['build']);
 
-gulp.task('watch', ['clean-bundle', 'serve'], function() {
+gulp.task('watch', sync(['clean-bundle', 'serve']), function() {
   bundler.watch();
   gulp.watch('app/*.html', ['html']);
   gulp.watch('app/styles/**/*.scss', ['styles']);
