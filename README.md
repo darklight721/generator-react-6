@@ -9,9 +9,9 @@ Bundled:
 * React
 * Gulp
 * Browserify
-* 6to5
+* Watchify
+* Babelify
 * Bower
-* Watchify support!
 * Sass
 
 Optional:

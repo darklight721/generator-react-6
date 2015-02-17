@@ -98,7 +98,7 @@ gulp.task('jest', function () {
   var nodeModules = path.resolve('./node_modules');
   return gulp.src('app/scripts/**/__tests__')
     .pipe($.jest({
-      scriptPreprocessor: nodeModules + '/6to5-jest',
+      scriptPreprocessor: nodeModules + '/babel-jest',
       unmockedModulePathPatterns: [nodeModules + '/react']
     }));
 });

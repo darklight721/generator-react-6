@@ -1,7 +1,7 @@
 {
   "name": "generator-react-6",
   "version": "0.0.1",
-  "description": "A Yeoman Generator for facebook's React framework. It includes gulp, browserify, livereload and 6to5 to transpile es6 codes to es5.",
+  "description": "A Yeoman Generator for facebook's React framework. It includes gulp, browserify, livereload and babel to transpile es6 codes to es5.",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "darklight721/generator-react-6",
@@ -24,7 +24,8 @@
     "react",
     "browserify",
     "gulp",
-    "6to5"
+    "6to5",
+    "babel"
   ],
   "dependencies": {
     "yeoman-generator": "^0.18.0",

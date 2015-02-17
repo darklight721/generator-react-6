@@ -5,7 +5,7 @@ var Home = React.createClass({
     return {
       items: [
         'Browserify',
-        '6to5'<% if (includeBootstrap) { %>,
+        'Babel'<% if (includeBootstrap) { %>,
         'Bootstrap'<% } if (includeModernizr) { %>,
         'Modernizr'<% } if (includeJest) { %>,
         'Jest'<% } %>
