@@ -7,8 +7,6 @@ var ComponentGenerator = yeoman.generators.Base.extend({
     yeoman.generators.Base.apply(this, arguments);
 
     this.argument('componentName', { type: String, defaults: 'Component' });
-    this.componentName = this._.classify(this.componentName);
-
     this.pkg = require('../package.json');
   },
 

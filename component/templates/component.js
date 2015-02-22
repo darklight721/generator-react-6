@@ -1,9 +1,9 @@
 var React = require('react');
 
-var <%= componentName %> = React.createClass({
+var <%= _.classify(componentName) %> = React.createClass({
   render() {
 
   }
 });
 
-module.exports = <%= componentName %>;
+module.exports = <%= _.classify(componentName) %>;
