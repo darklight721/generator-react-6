@@ -27,7 +27,7 @@ describe('generator-react-6', function() {
       'app/robots.txt',
       'app/styles/main.scss',
       'app/scripts/app.js',
-      'app/scripts/views/home.js'
+      'app/scripts/components/home.js'
     ]);
   });
 
@@ -54,7 +54,7 @@ describe('generator-react-6', function() {
   });
 
   it('has jest', function() {
-    assert.file('app/scripts/views/__tests__/home-test.js');
+    assert.file('app/scripts/components/__tests__/home-test.js');
     assert.fileContent([
       ['package.json', /"gulp-jest"/],
       ['gulpfile.js', /'jest'/]

@@ -52,6 +52,7 @@ var React6Generator = yeoman.generators.Base.extend({
       this.includeModernizr = hasFeature('includeModernizr');
       this.includeJest = hasFeature('includeJest');
 
+      this.config.set('includeJest', this.includeJest);
       done();
     }.bind(this));
   },
@@ -70,10 +71,10 @@ var React6Generator = yeoman.generators.Base.extend({
 
     this._copyTpl('app/main.scss', 'app/styles/main.scss');
     this._copy('app/app.js', 'app/scripts/app.js');
-    this._copyTpl('app/home.js', 'app/scripts/views/home.js');
+    this._copyTpl('app/home.js', 'app/scripts/components/home.js');
 
     if (this.includeJest)
-      this._copy('app/home-test.js', 'app/scripts/views/__tests__/home-test.js');
+      this._copy('app/home-test.js', 'app/scripts/components/__tests__/home-test.js');
   },
 
   _copy: function(from, to) {
