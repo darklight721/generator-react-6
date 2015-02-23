@@ -1,6 +1,6 @@
 {
   "name": "generator-react-6",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Yeoman Generator for facebook's React framework. It includes gulp, browserify, livereload and babel to transpile es6 codes to es5.",
   "license": "MIT",
   "main": "app/index.js",
