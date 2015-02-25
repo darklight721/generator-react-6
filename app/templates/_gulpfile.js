@@ -36,8 +36,7 @@ var bundler = {
 };
 
 gulp.task('styles', function() {
-  return gulp.src('app/styles/main.scss')
-    .pipe($.rubySass({
+  return $.rubySass('app/styles/main.scss', {
       style: 'expanded',
       precision: 10,
       loadPath: ['app/bower_components']
