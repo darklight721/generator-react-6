@@ -11,7 +11,8 @@ $ yo react-6                              # ...and run it.
 ```
 
 You can run the last command with `--skip-install` if you wish to skip
-the installation of `npm` and `bower` dependencies.
+the installation of `npm` and `bower` dependencies.   
+Also make sure that you have `ruby` with `sass (>= 3.4)` gem installed.   
 Now, when everything is ready, you can run these tasks to help you develop your React components.
 
 ```
