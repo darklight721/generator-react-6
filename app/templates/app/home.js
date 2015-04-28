@@ -1,8 +1,9 @@
-var React = require('react');
+import React from 'react';
 
-var Home = React.createClass({
-  getInitialState() {
-    return {
+export default class extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       items: [
         'Browserify',
         'Babel'<% if (includeBootstrap) { %>,
@@ -11,7 +12,7 @@ var Home = React.createClass({
         'Jest'<% } %>
       ]
     };
-  },
+  }
 
   render() {
     return (
@@ -22,11 +23,9 @@ var Home = React.createClass({
         <ul>{this.state.items.map(this.renderItem)}</ul>
       </div>
     );
-  },
+  }
 
   renderItem(item, index) {
     return <li key={index}>{item}</li>;
   }
-});
-
-module.exports = Home;
+}

@@ -14,8 +14,8 @@ describe('generator-react-6:component', function() {
       }));
 
       it('has default name', function() {
+        assert.file(['app/scripts/components/component.js']);
         assert.fileContent([
-          ['app/scripts/components/component.js', /Component/],
           ['app/scripts/components/__tests__/component-test.js', /component/],
           ['app/scripts/components/__tests__/component-test.js', /Component/]
         ]);
@@ -31,8 +31,8 @@ describe('generator-react-6:component', function() {
       }));
 
       it('has custom name', function() {
+        assert.file(['app/scripts/components/test-component.js']);
         assert.fileContent([
-          ['app/scripts/components/test-component.js', /TestComponent/],
           ['app/scripts/components/__tests__/test-component-test.js', /test-component/],
           ['app/scripts/components/__tests__/test-component-test.js', /TestComponent/]
         ]);
