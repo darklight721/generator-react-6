@@ -1,9 +1,8 @@
-import React from 'react/addons';
-import Home from '../home';
+jest.dontMock('../home');
 
+const React = require('react/addons');
+const Home = require('../home');
 const TestUtils = React.addons.TestUtils;
-
-jest.dontMock('../home.js');
 
 describe('Home', function() {
   let home = null;

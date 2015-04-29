@@ -1,9 +1,8 @@
-import React from 'react/addons';
-import <%= _.classify(componentName) %> from '../<%= _.slugify(componentName) %>';
+jest.dontMock('../<%= _.slugify(componentName) %>');
 
+const React = require('react/addons');
+const <%= _.classify(componentName) %> = require('../<%= _.slugify(componentName) %>');
 const TestUtils = React.addons.TestUtils;
-
-jest.dontMock('../<%= _.slugify(componentName) %>.js');
 
 describe('<%= _.classify(componentName) %>', function() {
 
