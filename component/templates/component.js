@@ -1,9 +1,12 @@
-var React = require('react');
+import React from 'react';
 
-var <%= _.classify(componentName) %> = React.createClass({
+export default class extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+
   render() {
 
   }
-});
-
-module.exports = <%= _.classify(componentName) %>;
+}
