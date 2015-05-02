@@ -1,9 +1,8 @@
-import React from 'react';
+import { Component } from 'react';
 
-export default class extends React.Component {
+export default class <%= _.classify(componentName) %> extends Component {
   constructor(props) {
     super(props);
-
   }
 
   render() {
