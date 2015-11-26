@@ -144,4 +144,5 @@ gulp.task('watch', sync(['clean-bundle', 'serve']), function() {
   gulp.watch('app/styles/**/*.scss', ['styles']);
   gulp.watch('app/images/**/*', ['images']);
   gulp.watch('app/fonts/**/*', ['fonts']);
+  gulp.watch('app/scripts/**/*', ['scripts']);
 });
